@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Shadow Tool</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+<h1>CSS Shadow Tool</h1>
+
+    <div class="container">
+        <div id="shadow-box"></div>
+    </div>
+    <div class="controls">
+        <div>
+            <label for="xpos">X Position</label>
+            <input id="xpos" type="number">
+        </div>
+        <div>
+            <label for="ypos">Y Position</label>
+            <input id="ypos" type="number">
+        </div>
+        <div>
+            <label for="spread">Shadow Spread</label>
+            <input id="spread" type="number">
+        </div>
+        <div>
+            <label for="opacity">Opacity</label>
+            <input id="opacity" type="range" max="100" step="1" value="100">
+        </div>
+
+    </div>
+    <div class="output">
+        <p>box-shadow: none;</p>
+    </div>
+
+
+    <script src="./assets/js/app.js"></script>
+</body>
+</html>
