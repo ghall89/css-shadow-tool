@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+
 body {
-    font-family: sans-serif;
+    font-family: 'Fjalla One', sans-serif;
 }
 
 h1 {
@@ -27,12 +29,19 @@ h1 {
     padding-top: 10px;
 }
 
+.controls div label {
+    text-align: center;
+    display: block;
+    margin-top: 5px;
+}
+
 #xpos, #ypos, #blur, #spread {
     width: 45px;
 }
 
 .output {
     margin: 15px auto;
+    border-radius: 3px;
     padding: 8px;
     border: 1px solid black;
 }
