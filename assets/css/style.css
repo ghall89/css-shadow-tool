@@ -28,10 +28,10 @@ h1 {
 
 .controls div {
     padding-top: 10px;
+    text-align: center;
 }
 
 .controls div label {
-    text-align: center;
     display: block;
     margin-top: 5px;
 }
