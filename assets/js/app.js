@@ -11,7 +11,7 @@ var cssOutput;
 
 // Take values from input and set variables
 function updateInput() {
-    // inset = document.getElementById("inset").value;
+    inset = document.getElementById("inset").checked;
     console.log(inset);
 
     xPosition = document.getElementById("xpos").value;
@@ -24,7 +24,7 @@ function updateInput() {
         cssOutput = xPosition + "px " + yPosition + "px " + shadowBlur + "px " + shadowSpread + "px rgba(0, 0, 0, " + opacity + ")"
     }
     if (inset == true) {
-        cssOutput = "inset" + xPosition + "px " + yPosition + "px " + shadowBlur + "px " + shadowSpread + "px rgba(0, 0, 0, " + opacity + ")"
+        cssOutput = "inset " + xPosition + "px " + yPosition + "px " + shadowBlur + "px " + shadowSpread + "px rgba(0, 0, 0, " + opacity + ")"
     }
 
     console.log(cssOutput);
