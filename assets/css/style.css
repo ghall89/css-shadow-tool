@@ -7,11 +7,10 @@ h1 {
 }
 
 .container {
-    height: 400px;
     width: 100%;
 }
 
-#shadow-box {
+#box {
     background: rgb(87, 87, 87);
     height: 200px;
     width: 40%;
@@ -26,6 +25,10 @@ h1 {
 
 .controls div {
     padding-top: 10px;
+}
+
+#xpos, #ypos, #blur, #spread {
+    width: 45px;
 }
 
 .output {
