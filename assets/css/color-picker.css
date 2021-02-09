@@ -1,0 +1,9 @@
+/* Custom color picker styles*/
+
+.picker_arrow {
+    display: none;
+}
+
+.picker_sample::before {
+    bottom: 0;
+}

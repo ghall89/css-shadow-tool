@@ -46,7 +46,10 @@ function updateOutput() {
 var parent = document.querySelector('#picker');
 var picker = new Picker({
     parent: parent, 
-    color: '#0000007c'
+    color: '#0000007c',
+    editor: false,
+    popup: 'top',
+    // layout: './assets/css/color-picker.css'
 });
 
 
