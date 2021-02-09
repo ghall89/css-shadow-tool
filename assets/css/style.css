@@ -85,7 +85,7 @@ h1, h2 {
 #picker {
     width: 55px;
     height: 30px;
-    background: var(--input-grey);
+    background: #0000007c;
     border: 1px solid var(--text-blue);
     border-radius: var(--radius);
 }

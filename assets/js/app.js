@@ -5,7 +5,7 @@ var xPosition;
 var yPosition;
 var shadowBlur;
 var shadowSpread;
-var opacity = 1;
+var pickedColor = "#0000007c";
 
 var cssOutput;
 
@@ -18,10 +18,10 @@ function updateInput() {
     shadowSpread = document.getElementById("spread").value;
 
     if (inset == false) {
-        cssOutput = xPosition + "px " + yPosition + "px " + shadowBlur + "px " + shadowSpread + "px rgba(0, 0, 0, " + opacity + ")"
+        cssOutput = xPosition + "px " + yPosition + "px " + shadowBlur + "px " + shadowSpread + "px "+ pickedColor;
     }
     if (inset == true) {
-        cssOutput = "inset " + xPosition + "px " + yPosition + "px " + shadowBlur + "px " + shadowSpread + "px rgba(0, 0, 0, " + opacity + ")"
+        cssOutput = "inset " + xPosition + "px " + yPosition + "px " + shadowBlur + "px " + shadowSpread + "px "+ pickedColor;
     }
 
     updateBox();
@@ -44,12 +44,17 @@ function updateOutput() {
 // Create a new Picker instance and set the parent element.
 // By default, the color picker is a popup which appears when you click the parent.
 var parent = document.querySelector('#picker');
-var picker = new Picker(parent);
+var picker = new Picker({
+    parent: parent, 
+    color: '#0000007c'
+});
 
 
 // You can do what you want with the chosen color using two callbacks: onChange and onDone.
 picker.onChange = function (color) {
     parent.style.background = color.rgbaString;
+    pickedColor = color.hex;
+
+    updateInput();
 };
 
-// onDone is similar to onChange, but only called when you click 'Ok'
