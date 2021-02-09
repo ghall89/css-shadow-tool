@@ -1,11 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Roboto+Mono&display=swap');
 
+* {
+    margin: 0;
+}
+
 body {
     font-family: 'Fjalla One', sans-serif;
     color: #4f6a8f;
+    background: #4f6a8f;
+    height: 100%;
 }
 
-h1 {
+.content {
+    background: white;
+    height: 100%;
+    width: 910px;
+    margin: 0 auto;
+    padding: 26px 0;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+h1, h2 {
     text-align: center;
 }
 
@@ -14,7 +32,7 @@ h1 {
 }
 
 #box {
-    background: #88a2bc;
+    background: #3e9cbf;
     height: 200px;
     width: 40%;
     margin: 100px auto;
@@ -24,6 +42,8 @@ h1 {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    padding-bottom: 18px;
+    margin-bottom: 18px;
 }
 
 .controls div {
@@ -45,10 +65,27 @@ h1 {
     border-radius: 3px;
     padding: 8px;
     border: 1px solid #4f6a8f;
+    margin: 0 26px
 }
 
 .output p {
     font-size: 14px;
     font-family: 'Roboto Mono', monospace;
     color: #d99477;
+}
+
+footer {
+    color: white;
+    text-align: center;
+    margin: 30px auto;
+}
+
+footer a {
+    color: #88d9d0;
+}
+
+@media screen and (max-width: 910px) {
+    .content {
+        width: 100%;
+    }
 }
