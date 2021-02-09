@@ -1,15 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Roboto+Mono&display=swap');
 
+:root {
+    --blue: #3e9cbf;
+    --text-blue: #4f6a8f;
+    --reddish-brown: #d99477;
+    --input-grey: #f2f2f3;
+    --radius: 3px;
+}
+
 * {
     margin: 0;
 }
 
 body {
     font-family: 'Fjalla One', sans-serif;
-    color: #4f6a8f;
-    background: #4f6a8f;
+    color: var(--text-blue);
+    background: var(--text-blue);
     height: 100%;
 }
+
+/* Main Content */
 
 .content {
     background: white;
@@ -28,20 +38,25 @@ h1, h2 {
     text-align: center;
 }
 
+/* Styles for preview block */
+
 .container {
     width: 100%;
 }
 
 #box {
-    background: #3e9cbf;
+    background: var(--blue);
     height: 200px;
     width: 40%;
     margin: 100px auto;
 }
 
+/* Styles for controls and user interaction */
+
 .controls {
     display: flex;
     justify-content: space-around;
+    align-items: flex-end;
     flex-wrap: wrap;
     padding-bottom: 18px;
     margin-bottom: 18px;
@@ -59,21 +74,29 @@ h1, h2 {
 
 #xpos, #ypos, #blur, #spread {
     width: 45px;
+    font-family: 'Fjalla One', sans-serif;
+    background: var(--input-grey);
+    color: var(--text-blue);
+    border: 1px solid var(--text-blue);
+    padding: 6px 4px;
+    border-radius: var(--radius);
 }
 
 .output {
     margin: 15px auto;
-    border-radius: 3px;
+    border-radius: var(--radius);
     padding: 8px;
-    border: 1px solid #4f6a8f;
+    border: 1px solid var(--text-blue);
     margin: 0 26px
 }
 
 .output p {
     font-size: 14px;
     font-family: 'Roboto Mono', monospace;
-    color: #d99477;
+    color: var(--reddish-brown)
 }
+
+/* Footer style */
 
 footer {
     color: white;
@@ -84,6 +107,8 @@ footer {
 footer a {
     color: white;
 }
+
+/* Media query to squash UI on narrow windows */
 
 @media screen and (max-width: 910px) {
     .content {
