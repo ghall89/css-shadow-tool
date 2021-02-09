@@ -16,6 +16,10 @@
     </div>
     <div class="controls">
         <div>
+            <button id="picker"></button>
+            <label for="picker">Color</label>
+        </div>
+        <div>
             <input id="inset" type="checkbox" value="inset" onchange="updateInput()">
             <label for="inset">Inset Shadow</label>
         </div>
@@ -35,10 +39,7 @@
             <input id="spread" type="number" value="0" onchange="updateInput()">
             <label for="spread">Spread</label>
         </div>
-        <div>
-            <input id="opacity" type="range" max="1" step="0.01" value="1" onchange="updateInput()">
-            <label for="opacity">Opacity</label>
-        </div>
+
 
     </div>
     <h2>Copy the following code into your CSS file</h2>
@@ -53,6 +54,7 @@
         <p>Created by <a href="https://github.com/ghall89" target="_blank">Graham Hall</a></p>
     </footer>
 
+    <script src="https://unpkg.com/vanilla-picker@2"></script>
     <script src="./assets/js/app.js"></script>
 </body>
 </html>

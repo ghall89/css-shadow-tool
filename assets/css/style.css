@@ -82,6 +82,14 @@ h1, h2 {
     border-radius: var(--radius);
 }
 
+#picker {
+    width: 55px;
+    height: 30px;
+    background: var(--input-grey);
+    border: 1px solid var(--text-blue);
+    border-radius: var(--radius);
+}
+
 .output {
     margin: 15px auto;
     border-radius: var(--radius);

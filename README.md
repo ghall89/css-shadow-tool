@@ -14,6 +14,10 @@ Deployed Link [https://ghall89.github.io/css-shadow-tool/](https://ghall89.githu
 * When you're happy with the preview, copy the code output and paste it into your project
 * Enjoy your lovely shadows!
 
+## Credits
+
+[vanilla-picker](https://github.com/Sphinxxxx/vanilla-picker) by [Andreas Borgen](https://github.com/Sphinxxxx)
+
 ## License
 
 MIT License

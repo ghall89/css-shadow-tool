@@ -5,7 +5,7 @@ var xPosition;
 var yPosition;
 var shadowBlur;
 var shadowSpread;
-var opacity;
+var opacity = 1;
 
 var cssOutput;
 
@@ -16,7 +16,6 @@ function updateInput() {
     yPosition = document.getElementById("ypos").value;
     shadowBlur = document.getElementById("blur").value;
     shadowSpread = document.getElementById("spread").value;
-    opacity = document.getElementById("opacity").value;
 
     if (inset == false) {
         cssOutput = xPosition + "px " + yPosition + "px " + shadowBlur + "px " + shadowSpread + "px rgba(0, 0, 0, " + opacity + ")"
@@ -39,3 +38,18 @@ function updateOutput() {
     document.getElementById("webkit-cssCode").innerText = cssOutput;
     document.getElementById("moz-cssCode").innerText = cssOutput;
 }
+
+// Color Picker Functionality
+
+// Create a new Picker instance and set the parent element.
+// By default, the color picker is a popup which appears when you click the parent.
+var parent = document.querySelector('#picker');
+var picker = new Picker(parent);
+
+
+// You can do what you want with the chosen color using two callbacks: onChange and onDone.
+picker.onChange = function (color) {
+    parent.style.background = color.rgbaString;
+};
+
+// onDone is similar to onChange, but only called when you click 'Ok'
