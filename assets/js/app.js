@@ -12,8 +12,6 @@ var cssOutput;
 // Take values from input and set variables
 function updateInput() {
     inset = document.getElementById("inset").checked;
-    console.log(inset);
-
     xPosition = document.getElementById("xpos").value;
     yPosition = document.getElementById("ypos").value;
     shadowBlur = document.getElementById("blur").value;
@@ -26,8 +24,6 @@ function updateInput() {
     if (inset == true) {
         cssOutput = "inset " + xPosition + "px " + yPosition + "px " + shadowBlur + "px " + shadowSpread + "px rgba(0, 0, 0, " + opacity + ")"
     }
-
-    console.log(cssOutput);
 
     updateBox();
     updateOutput();
