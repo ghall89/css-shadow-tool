@@ -25,8 +25,12 @@ body {
     background: white;
     height: 100%;
     width: 910px;
-    margin: 0 auto;
+    margin: 20px auto;
     padding: 26px 0;
+    border-radius: var(--radius);
+    box-shadow: 3px 2px 10px -3px #0000007c;
+    -webkit-box-shadow: 3px 2px 10px -3px #0000007c;
+    -moz-box-shadow: 3px 2px 10px -3px #0000007c;
 }
 
 h2 {
@@ -121,5 +125,7 @@ footer a {
 @media screen and (max-width: 910px) {
     .content {
         width: 100%;
+        margin: 0;
+        border-radius: 0;
     }
 }
