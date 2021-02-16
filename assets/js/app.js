@@ -9,6 +9,8 @@ var pickedColor = "#0000007c";
 
 var cssOutput;
 
+var copyButton = document.getElementById("copy");
+
 // Take values from input and set variables
 function updateInput() {
     inset = document.getElementById("inset").checked;
@@ -24,6 +26,8 @@ function updateInput() {
         cssOutput = "inset " + xPosition + "px " + yPosition + "px " + shadowBlur + "px " + shadowSpread + "px "+ pickedColor;
     }
 
+    copyButton.innerText = "Copy to Clipboard";
+
     updateBox();
     updateOutput();
 }
@@ -37,6 +41,13 @@ function updateOutput() {
     document.getElementById("cssCode").innerText = cssOutput;
     document.getElementById("webkit-cssCode").innerText = cssOutput;
     document.getElementById("moz-cssCode").innerText = cssOutput;
+}
+
+function copyToClipBoard() {
+    var textToCopy = document.getElementById("output-text");
+
+    window.navigator.clipboard.writeText(textToCopy.innerText);
+    copyButton.innerText = "Copied!";
 }
 
 // Color Picker Functionality

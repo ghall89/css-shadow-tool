@@ -35,21 +35,21 @@
                 <label for="ypos">Y Offset</label>
             </div>
             <div>
-                <input id="blur" type="number" pattern="[0-9]*" value="0" onchange="updateInput()">
+                <input id="blur" type="number" pattern="[0-9]*" value="0" min="0" onchange="updateInput()">
                 <label for="blur">Blur</label>
             </div>
             <div>
-                <input id="spread" type="number" pattern="[0-9]*" value="0" onchange="updateInput()">
+                <input id="spread" type="number" pattern="[0-9]*" value="0" min="0" onchange="updateInput()">
                 <label for="spread">Spread</label>
             </div>
 
 
         </div>
         <div class="output">
-            <p>box-shadow: <span id="cssCode">none</span>;<br>
+            <p id="output-text">box-shadow: <span id="cssCode">none</span>;<br>
                 -webkit-box-shadow: <span id="webkit-cssCode">none</span>;<br>
                 -moz-box-shadow: <span id="moz-cssCode">none</span>;</p>
-                <button id="copy">Copy to Clipboard</button>
+                <button id="copy" onclick="copyToClipBoard()">Copy to Clipboard</button>
         </div>
 
         <footer>
