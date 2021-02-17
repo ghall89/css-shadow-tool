@@ -6,7 +6,7 @@ var shadow = {
     y: 0,
     blur: 0,
     spread: 0,
-    pickedColor: "#0000007c"
+    color: "#0000007c"
 }
 
 var cssOutput;
@@ -22,10 +22,10 @@ function updateInput() {
     shadow.spread = document.getElementById("spread").value;
 
     if (shadow.inset == false) {
-        cssOutput = shadow.x + "px " + shadow.y + "px " + shadow.blur + "px " + shadow.spread + "px "+ shadow.pickedColor;
+        cssOutput = shadow.x + "px " + shadow.y + "px " + shadow.blur + "px " + shadow.spread + "px "+ shadow.color;
     }
     if (shadow.inset == true) {
-        cssOutput = "inset " + shadow.x + "px " + shadow.y + "px " + shadow.blur + "px " + shadow.spread + "px "+ shadow.pickedColor;
+        cssOutput = "inset " + shadow.x + "px " + shadow.y + "px " + shadow.blur + "px " + shadow.spread + "px "+ shadow.color;
     }
 
     copyButton.innerText = "Copy to Clipboard";
@@ -69,7 +69,7 @@ var picker = new Picker({
 // You can do what you want with the chosen color using two callbacks: onChange and onDone.
 picker.onChange = function (color) {
     parent.style.background = color.rgbaString;
-    pickedColor = color.hex;
+    shadow.color = color.hex;
 
     updateInput();
 };
