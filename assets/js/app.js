@@ -1,11 +1,13 @@
 // Setup variables
 
-var inset = false;
-var xPosition;
-var yPosition;
-var shadowBlur;
-var shadowSpread;
-var pickedColor = "#0000007c";
+var shadow = {
+    inset: false,
+    x: 0,
+    y: 0,
+    blur: 0,
+    spread: 0,
+    pickedColor: "#0000007c"
+}
 
 var cssOutput;
 
@@ -13,17 +15,17 @@ var copyButton = document.getElementById("copy");
 
 // Take values from input and set variables
 function updateInput() {
-    inset = document.getElementById("inset").checked;
-    xPosition = document.getElementById("xpos").value;
-    yPosition = document.getElementById("ypos").value;
-    shadowBlur = document.getElementById("blur").value;
-    shadowSpread = document.getElementById("spread").value;
+    shadow.inset = document.getElementById("inset").checked;
+    shadow.x = document.getElementById("xpos").value;
+    shadow.y = document.getElementById("ypos").value;
+    shadow.blur = document.getElementById("blur").value;
+    shadow.spread = document.getElementById("spread").value;
 
-    if (inset == false) {
-        cssOutput = xPosition + "px " + yPosition + "px " + shadowBlur + "px " + shadowSpread + "px "+ pickedColor;
+    if (shadow.inset == false) {
+        cssOutput = shadow.x + "px " + shadow.y + "px " + shadow.blur + "px " + shadow.spread + "px "+ shadow.pickedColor;
     }
-    if (inset == true) {
-        cssOutput = "inset " + xPosition + "px " + yPosition + "px " + shadowBlur + "px " + shadowSpread + "px "+ pickedColor;
+    if (shadow.inset == true) {
+        cssOutput = "inset " + shadow.x + "px " + shadow.y + "px " + shadow.blur + "px " + shadow.spread + "px "+ shadow.pickedColor;
     }
 
     copyButton.innerText = "Copy to Clipboard";
