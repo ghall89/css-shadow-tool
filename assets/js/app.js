@@ -11,8 +11,6 @@ var shadow = {
 
 var cssOutput;
 
-var copyButton = document.getElementById("copy");
-
 // Take values from input and set variables
 function updateInput() {
     shadow.inset = document.getElementById("inset").checked;
@@ -27,8 +25,6 @@ function updateInput() {
     if (shadow.inset == true) {
         cssOutput = "inset " + shadow.x + "px " + shadow.y + "px " + shadow.blur + "px " + shadow.spread + "px "+ shadow.color;
     }
-
-    copyButton.innerText = "Copy to Clipboard";
 
     updateBox();
     updateOutput();
@@ -47,22 +43,25 @@ function updateOutput() {
 
 function copyToClipBoard() {
     var textToCopy = document.getElementById("output-text");
+    var copyButton = document.getElementById("copy");
 
     window.navigator.clipboard.writeText(textToCopy.innerText);
     copyButton.innerText = "Copied!";
+    
+    var buttonState = setInterval(function(){
+        copyButton.innerText = "Copy to Clipboard";
+    }, 3000);
+
 }
 
 // Color Picker Functionality
 
-// Create a new Picker instance and set the parent element.
-// By default, the color picker is a popup which appears when you click the parent.
 var parent = document.querySelector('#picker');
 var picker = new Picker({
     parent: parent, 
     color: '#0000007c',
     editor: false,
     popup: 'top',
-    // layout: './assets/css/color-picker.css'
 });
 
 
