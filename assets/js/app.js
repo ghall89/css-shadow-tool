@@ -1,5 +1,4 @@
-// Setup variables
-
+// Create default state for shadow object
 var shadow = {
     inset: false,
     x: 0,
@@ -9,53 +8,54 @@ var shadow = {
     color: "#0000007c"
 }
 
-var cssOutput;
+// Set default button text
+var copyButton = document.getElementById("copy");
+defaultCopyBtn();
+function defaultCopyBtn() {
+    copyButton.innerText = "Copy to Clipboard";
+};
 
 // Take values from input and set variables
-function updateInput() {
+function getInput() {
+    var cssOutput;
     shadow.inset = document.getElementById("inset").checked;
     shadow.x = document.getElementById("xpos").value;
     shadow.y = document.getElementById("ypos").value;
     shadow.blur = document.getElementById("blur").value;
     shadow.spread = document.getElementById("spread").value;
-
     if (shadow.inset == false) {
         cssOutput = shadow.x + "px " + shadow.y + "px " + shadow.blur + "px " + shadow.spread + "px "+ shadow.color;
     }
     if (shadow.inset == true) {
         cssOutput = "inset " + shadow.x + "px " + shadow.y + "px " + shadow.blur + "px " + shadow.spread + "px "+ shadow.color;
     }
-
-    updateBox();
-    updateOutput();
+    updateBox(cssOutput);
+    updateOutput(cssOutput);
 }
 
 // Update CSS on the preview box
-function updateBox() {
-    document.getElementById("box").style.boxShadow = cssOutput;
+function updateBox(css) {
+    document.getElementById("box").style.boxShadow = css;
 }
 // Update CSS code output
-function updateOutput() {
-    document.getElementById("cssCode").innerText = cssOutput;
-    document.getElementById("webkit-cssCode").innerText = cssOutput;
-    document.getElementById("moz-cssCode").innerText = cssOutput;
+function updateOutput(css) {
+    document.getElementById("cssCode").innerText = css;
+    document.getElementById("webkit-cssCode").innerText = css;
+    document.getElementById("moz-cssCode").innerText = css;
 }
 
+// Copy the contents of output-text onto the system clipboad
+// & indicate success by changing the button text for 3 seconds
 function copyToClipBoard() {
     var textToCopy = document.getElementById("output-text");
-    var copyButton = document.getElementById("copy");
-
     window.navigator.clipboard.writeText(textToCopy.innerText);
     copyButton.innerText = "Copied!";
-    
     var buttonState = setInterval(function(){
-        copyButton.innerText = "Copy to Clipboard";
+        defaultCopyBtn();
     }, 3000);
-
 }
 
 // Color Picker Functionality
-
 var parent = document.querySelector('#picker');
 var picker = new Picker({
     parent: parent, 
@@ -69,7 +69,6 @@ var picker = new Picker({
 picker.onChange = function (color) {
     parent.style.background = color.rgbaString;
     shadow.color = color.hex;
-
-    updateInput();
+    getInput();
 };
 

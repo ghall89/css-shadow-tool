@@ -23,23 +23,23 @@
                 <label for="picker">Color</label>
             </div>
             <div>
-                <input id="inset" type="checkbox" value="inset" onchange="updateInput()">
+                <input id="inset" type="checkbox" value="inset" onchange="getInput()">
                 <label for="inset">Inset Shadow</label>
             </div>
             <div>
-                <input id="xpos" type="number" pattern="[0-9]*" value="0" onchange="updateInput()">
+                <input id="xpos" type="number" pattern="[0-9]*" value="0" onchange="getInput()">
                 <label for="xpos">X Offset</label>
             </div>
             <div>
-                <input id="ypos" type="number" pattern="[0-9]*" value="0" onchange="updateInput()">
+                <input id="ypos" type="number" pattern="[0-9]*" value="0" onchange="getInput()">
                 <label for="ypos">Y Offset</label>
             </div>
             <div>
-                <input id="blur" type="number" pattern="[0-9]*" value="0" min="0" onchange="updateInput()">
+                <input id="blur" type="number" pattern="[0-9]*" value="0" min="0" onchange="getInput()">
                 <label for="blur">Blur</label>
             </div>
             <div>
-                <input id="spread" type="number" pattern="[0-9]*" value="0" min="0" onchange="updateInput()">
+                <input id="spread" type="number" pattern="[0-9]*" value="0" min="0" onchange="getInput()">
                 <label for="spread">Spread</label>
             </div>
 
@@ -49,7 +49,7 @@
             <p id="output-text">box-shadow: <span id="cssCode">none</span>;<br>
                 -webkit-box-shadow: <span id="webkit-cssCode">none</span>;<br>
                 -moz-box-shadow: <span id="moz-cssCode">none</span>;</p>
-                <button id="copy" onclick="copyToClipBoard()">Copy to Clipboard</button>
+                <button id="copy" onclick="copyToClipBoard()"></button>
         </div>
 
         <footer>
